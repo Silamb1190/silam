@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Details</title>
+    <title>FTP Web Client</title>
     <style>
-        table {
-            width: 50%;
-            margin: 25px 0;
-            border-collapse: collapse;
+        /* Basic styling for the FTP client */
+        body {
+            font-family: Arial, sans-serif;
         }
-        table, th, td {
-            border: 1px solid black;
+        #ftp-details {
+            margin-bottom: 20px;
         }
-        th, td {
-            padding: 10px;
-            text-align: left;
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .file-item:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <h1>Invoice Details</h1>
-    <table>
-        <tr>
-            <th>Invoice Number</th>
-            <td>12345</td>
-        </tr>
-        <tr>
-            <th>Date</th>
-            <td>2024-12-13</td>
-        </tr>
-        <tr>
-            <th>Amount</th>
-            <td>$100.00</td>
-        </tr>
-    </table>
+    <h1>FTP Web Client</h1>
+    <div id="ftp-details">
+        <label for="ftp-server">Server:</label>
+        <input type="text" id="ftp-server" placeholder="ftp.example.com"><br><br>
+        <label for="ftp-user">Username:</label>
+        <input type="text" id="ftp-user" placeholder="ftpuser"><br><br>
+        <label for="ftp-password">Password:</label>
+        <input type="password" id="ftp-password" placeholder="password"><br><br>
+        <button onclick="connectFTP()">Connect</button>
+    </div>
+
+    <div id="file-explorer" style="display: none;">
+        <h2>Files & Folders:</h2>
+        <div id="file-list" class="file-list"></div>
+    </div>
+
+    <script src="ftp-client.js"></script>
 </body>
 </html>
